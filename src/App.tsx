@@ -8,6 +8,7 @@ import Content from "./pages/Content";
 import Admin from "./pages/Admin";
 import { Clock } from "./components/Clock";
 import { InstallPWA } from "./components/InstallPWA";
+import { CountdownTimer } from "./components/CountdownTimer";
 
 const queryClient = new QueryClient();
 
@@ -16,15 +17,16 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
+      <BrowserRouter basename="/leqso">
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/content" element={<Content />} />
           <Route path="/admin" element={<Admin />} />
         </Routes>
-      </BrowserRouter>
+      <CountdownTimer />
       <Clock />
       <InstallPWA />
+    </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
 );
