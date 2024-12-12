@@ -3,22 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>request-manager-portal</title>
+    <title>Request Manager Portal</title>
     <meta name="description" content="Request Manager Portal" />
     <meta name="author" content="Leqso" />
-    <meta property="og:image" content="/og-image.png" />
-    <link rel="manifest" href="/manifest.json" />
-    <link rel="icon" href="/favicon.ico" />
+    <meta property="og:image" content="og-image.png" />
+    <link rel="manifest" href="manifest.json" />
+    <link rel="icon" href="favicon.ico" />
     <meta name="theme-color" content="#000000" />
   </head>
-
   <body>
     <div id="root"></div>
     <script>
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', async () => {
           try {
-            const registration = await navigator.serviceWorker.register('/sw.js');
+            const registration = await navigator.serviceWorker.register('sw.js');
             console.log('ServiceWorker registration successful');
           } catch (err) {
             console.log('ServiceWorker registration failed: ', err);
