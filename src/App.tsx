@@ -15,7 +15,7 @@ const queryClient = new QueryClient();
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
-      <BrowserRouter basename="/leqso">
+      <BrowserRouter basename="/REQUEST-MANAGER-PORTAL">
         <Toaster />
         <Sonner />
         <Routes>

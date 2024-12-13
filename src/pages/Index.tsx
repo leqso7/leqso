@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { RequestButton } from '@/components/RequestButton';
-import { checkUserStatus } from '@/lib/firebase';
+import { checkUserStatus } from '@/lib/supabase';
 
 const Index = () => {
   const navigate = useNavigate();
@@ -9,12 +9,16 @@ const Index = () => {
 
   useEffect(() => {
     const checkAccess = async () => {
-      const userId = localStorage.getItem('userId');
-      if (userId) {
-        const status = await checkUserStatus(userId);
-        if (status === 'approved') {
-          navigate('/content');
+      try {
+        const userId = localStorage.getItem('userId');
+        if (userId) {
+          const status = await checkUserStatus(userId);
+          if (status === 'approved') {
+            navigate('/content');
+          }
         }
+      } catch (error) {
+        console.error('Error checking access:', error);
       }
       setIsChecking(false);
     };

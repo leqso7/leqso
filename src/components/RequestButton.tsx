@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { sendRequest } from '@/lib/firebase';
+import { sendRequest } from '@/lib/supabase';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/components/ui/use-toast';
 import { Facebook } from 'lucide-react';
@@ -26,6 +26,7 @@ export const RequestButton = () => {
         description: `თქვენი კოდია: ${requestCode}`,
       });
     } catch (error) {
+      console.error('Error sending request:', error);
       toast({
         title: "შეცდომა",
         description: "მოთხოვნის გაგზავნა ვერ მოხერხდა",
@@ -49,10 +50,10 @@ export const RequestButton = () => {
           href="https://www.facebook.com/profile.php?id=61567812722184"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-2 text-blue-600 hover:text-blue-700 transition-colors"
+          className="inline-flex items-center space-x-2 text-blue-600 hover:text-blue-800"
         >
-          <Facebook className="h-5 w-5" />
-          <span>Facebook</span>
+          <Facebook className="w-5 h-5" />
+          <span>ჩვენი Facebook გვერდი</span>
         </a>
       </div>
     </div>

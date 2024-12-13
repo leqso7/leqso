@@ -4,7 +4,7 @@ import path from "path"
 
 export default defineConfig({
   plugins: [react()],
-  base: '/leqso/',
+  base: '/REQUEST-MANAGER-PORTAL/',
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
