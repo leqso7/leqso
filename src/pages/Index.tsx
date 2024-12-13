@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { RequestButton } from '@/components/RequestButton';
 import { checkUserStatus } from '@/lib/supabase';
+import { Clock } from '@/components/Clock';
 
 const Index = () => {
   const navigate = useNavigate();
@@ -35,6 +36,9 @@ const Index = () => {
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-gray-50 to-white p-4">
+      <div className="absolute top-4 right-4">
+        <Clock />
+      </div>
       <div className="text-center max-w-2xl mx-auto space-y-8">
         <h1 className="text-4xl font-bold tracking-tight">
           მოგესალმებით
